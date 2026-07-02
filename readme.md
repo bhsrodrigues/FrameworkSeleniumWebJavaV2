@@ -91,11 +91,11 @@ public  boolean  driverAtivo()  {
 return  driver  !=  null;
 }
 ```
-**Request:** Diretório contendo todos os requests gerados para os testes de API utilizando o RestAssured
+**Request:** Diretório contendo todos os requests gerados para os testes de API utilizando o RestAssured (TO DO)
 
 **Utils:** Pacote com classes com funcionalidades de utilidade para a manutenção e execução dos testes.
 - ScenarioContext: Usada para compartilhamento de status entre steps do mesmo cenário. Deve ser usado dentro das classes de StepDefinition.
-- Screenshot: Usada para obter uma captura da tela conforme necessidade do fluxo web a ser testado.
+- Screenshot: Usada para obter uma captura da tela conforme necessidade do fluxo web a ser testado. (TO DO)
 
 **Hooks:** Contém funções para execução anterior e posterior a cada cenário. Como o webdriver é gerido via ThreadLocal para isolar execuções em paralelo  quando necessário compartilhar status entre cenários, existe uma função para verificar se o driver será reutilizado por outro teste. Para essa função ser acessada, é necessário usar a tag @reusa-driver no arquivo feature.
 **Features:** Diretório com todos os arquivos `.feature` criados para execução dos testes. Por padrão, será dividido por sub-pastas com base em telas/fluxos testados.
