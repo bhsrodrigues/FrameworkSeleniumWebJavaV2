@@ -13,8 +13,9 @@ public class FlowsLoginSauceDemo {
 		homeSDPage = new HomeSauceDemoPage();
 	}
 	
-	public void acessarSite() {
+	public FlowsLoginSauceDemo acessarSite() {
 		loginSDPage.navegar("https://www.saucedemo.com/");
+		return this;
 	}
 	
 	public void efetuarLogin(String usuario, String senha) {
@@ -25,8 +26,6 @@ public class FlowsLoginSauceDemo {
 	public String mensagemErro() {
 		return loginSDPage.mensagemErroLogin().getText();
 	}
-
-
 	
 	public boolean loginRealizadoComSucesso() {
 		return homeSDPage.getComboFiltroExiste();

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class DriverManager {
 
-	private static WebDriver driver;
+	//private static WebDriver driver;
 	
 	private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<WebDriver>();
 	
@@ -38,13 +38,13 @@ public class DriverManager {
 	}
 	
 	public static void finalizarDrive() {
-		driver = driverThread.get();
+		WebDriver driver = driverThread.get();
 		if (driver != null) {
 			try {
 				driver.quit();
 				//driver.close();
 			}catch(Exception ex) {
-				System.err.println(ex.fillInStackTrace());;
+				System.out.println(ex.fillInStackTrace());;
 			}
 			finally{
 				driverThread.remove();
