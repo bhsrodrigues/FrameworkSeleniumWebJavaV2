@@ -1,4 +1,4 @@
-package framework.steps.DemoSauce;
+package framework.steps;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

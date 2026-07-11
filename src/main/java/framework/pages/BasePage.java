@@ -24,6 +24,7 @@ public class BasePage {
 		driver = DriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		actions = new Actions(driver);
+		driver.manage().window().maximize();
 	}
 	
 	protected void acessarSite(String url) {

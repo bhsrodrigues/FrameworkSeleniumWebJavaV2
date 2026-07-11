@@ -9,7 +9,7 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 	
 	@Before(order = 0)
-	public void antesDoCenario(Scenario scenario) throws Exception{
+	public static void antesDoCenario(Scenario scenario) throws Exception{
 		
 		if (!DriverManager.driverAtivo()) {
 				DriverManager.iniciarDriver();
@@ -17,7 +17,7 @@ public class Hooks {
 	}
 	
 	@After(order = 0)
-	public void depoisDoCenario(Scenario scenario) {
+	public static void depoisDoCenario(Scenario scenario) {
 		
 		if (DriverManager.driverAtivo()) {
 			DriverManager.finalizarDrive();
@@ -26,7 +26,7 @@ public class Hooks {
 	
 	
 	@AfterAll()
-	public void depoisDeTudo() {
+	public static void depoisDeTudo() {
 		if (DriverManager.driverAtivo()) {
 			DriverManager.finalizarDrive();
 		}
