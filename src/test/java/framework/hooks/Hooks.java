@@ -11,7 +11,6 @@ public class Hooks {
 	@Before(order = 0)
 	public static void antesDoCenario(Scenario scenario) throws Exception{
 		
-		
 		if (!DriverManager.driverAtivo()) {
 				DriverManager.iniciarDriver();
 		}

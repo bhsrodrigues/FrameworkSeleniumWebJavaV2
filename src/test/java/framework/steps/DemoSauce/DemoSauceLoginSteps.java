@@ -1,9 +1,9 @@
-package framework.steps;
+package framework.steps.DemoSauce;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import framework.constantes.LoginSauceDemoConstants;
+import framework.constantes.SauceDemoConstants;
 import framework.flows.FlowsLoginSauceDemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -42,9 +42,9 @@ public class DemoSauceLoginSteps {
 	
 	private String selecionarMensagemErro(String tipoErro) {
 		if (tipoErro.equals("bloqueado")) {
-			return LoginSauceDemoConstants.USUARIOBLOQUEADO;
+			return SauceDemoConstants.USUARIOBLOQUEADO;
 		}else {
-			return LoginSauceDemoConstants.USUARIOSENHAINVALIDOS;
+			return SauceDemoConstants.USUARIOSENHAINVALIDOS;
 		}
 	}
 	
