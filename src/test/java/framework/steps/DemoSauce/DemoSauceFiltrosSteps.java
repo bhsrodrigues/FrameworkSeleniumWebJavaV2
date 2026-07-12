@@ -1,4 +1,4 @@
-package framework.steps;
+package framework.steps.DemoSauce;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,13 +29,13 @@ public class DemoSauceFiltrosSteps {
 	@When("selecionado o filtro por nome descendente")
 	public void selecionado_o_filtro_por_nome_descendente() {
 	    // Write code here that turns the phrase above into concrete actions
-	    flwFiltrosSD.filtrarNomeAscendente();
+	    flwFiltrosSD.filtrarNomeDescendente();
 	}
 
 	@When("seleciono o filtro por nome ascendente")
 	public void seleciono_o_filtro_por_nome_ascendente() {
 	    // Write code here that turns the phrase above into concrete actions
-	    flwFiltrosSD.filtrarNomeDescendente();
+	    flwFiltrosSD.filtrarNomeAscendente();
 	}
 
 	@When("seleciono o filtro por valor crescente")

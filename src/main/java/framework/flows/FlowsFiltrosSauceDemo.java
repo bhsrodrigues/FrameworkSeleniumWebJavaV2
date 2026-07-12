@@ -28,7 +28,7 @@ public class FlowsFiltrosSauceDemo {
 	
 	public void filtrarValoresAscendente() {
 		homeSDPage.selecionarFiltro("Price (low to high)");
-		if (!homeSDPage.validarOrdenacaoValores(false)) 
+		if (!homeSDPage.validarOrdenacaoValores(true)) 
 			motivosErros.set("Não foi possível fazer ordenação por valores ascendentes");
 	}
 	

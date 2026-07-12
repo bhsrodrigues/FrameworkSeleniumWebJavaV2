@@ -1,6 +1,7 @@
 package framework.pages;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -13,12 +14,12 @@ public class CheckoutDemoSaucePages extends BasePage{
 	private By txtCampoZipCode = By.id("postal-code");
 	private By botaoContinuar = By.id("continue");
 	private By lblValorProdutoCarrinho = By.className("inventory_item_price");
-	private By lblSubTotal = By.id("summary_subtotal_label");
+	private By lblSubTotal = By.cssSelector(".summary_info > .summary_subtotal_label");
 	private By botaoFinalizarCompra = By.id("finish");
 	@SuppressWarnings("unused")
 	private By sectionPedidoRealizado = By.id("checkout-complete-container");
-	private By iconeSucesso = By.id("pony-express");
-	private By lblMensagemSucesso = By.id("complete-header");
+	private By iconeSucesso = By.cssSelector("#checkout_complete_container > .pony_express");
+	private By lblMensagemSucesso = By.cssSelector("#checkout_complete_container > .complete-header");
 	
 	public CheckoutDemoSaucePages() {
 		super();
@@ -37,17 +38,17 @@ public class CheckoutDemoSaucePages extends BasePage{
 	
 	public BigDecimal somarTodosProdutos() {
 		List<WebElement> listElem = esperarListaDeElementosVisiveis(lblValorProdutoCarrinho);
-		BigDecimal valorTotal = new BigDecimal(0);
+		BigDecimal valorTotal = new BigDecimal(0.00);
 		
 		for(WebElement elem : listElem) {
-			valorTotal = converterValorParaMonetario(elem.getText(),"$");
+			valorTotal = valorTotal.add(converterValorParaMonetario(elem.getText(),"$"));
 		}
 		return valorTotal;
 	}
 	
 	public BigDecimal valorTotalProduto() {
 		return converterValorParaMonetario(
-					esperarElementoVisivel(lblSubTotal).getText(),"Item total: $");
+					esperarElementoVisivel(lblSubTotal).getText(),"Item total: $").setScale(2, RoundingMode.HALF_UP);
 	}
 	
 	private BigDecimal converterValorParaMonetario(String valor,String textoARemover) {

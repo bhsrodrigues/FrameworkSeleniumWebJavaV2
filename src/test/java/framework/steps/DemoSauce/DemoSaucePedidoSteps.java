@@ -1,4 +1,4 @@
-package framework.steps;
+package framework.steps.DemoSauce;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -30,7 +30,7 @@ public class DemoSaucePedidoSteps {
 	}
 
 	@When("finalizo a compra")
-	public void finalizo_a_compra() {
+	public void finalizo_a_compra() throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
 	    assertTrue(flwsCheckoutSD.avancarComFluxoDeCheckout());
 	}
@@ -40,7 +40,7 @@ public class DemoSaucePedidoSteps {
 		assertTrue(flwsCheckoutSD.pedidoFinalizado(SauceDemoConstants.MENSAGEMCOMPRASUCESSO));
 	}
 
-	/*@When("eu seleciono todos os produtos")
+	@When("eu seleciono todos os produtos")
 	public void eu_seleciono_todos_os_produtos() {
 	    // Write code here that turns the phrase above into concrete actions
 		flwsCheckoutSD.adicionarTodosProdutosAoCarrinho();
@@ -49,11 +49,6 @@ public class DemoSaucePedidoSteps {
 	@When("retiro um produto na tela de carrinho")
 	public void retiro_o_produto_na_tela_de_carrinho() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@When("retiro um produto na tela de carrinho")
-	public void retiro_um_produto_na_tela_de_carrinho() {
 	    flwsCheckoutSD.retirarUmProdutoDoCarrinho();
 	}
 
@@ -62,23 +57,4 @@ public class DemoSaucePedidoSteps {
 		flwsCheckoutSD.removerTodosProdutosDoCarrinho();
 	}
 
-	*/
-
-	@When("eu seleciono todos os produtos")
-	public void eu_seleciono_todos_os_produtos() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@When("retiro um produto na tela de carrinho")
-	public void retiro_um_produto_na_tela_de_carrinho() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@When("retiro todos os produtos na tela inicial")
-	public void retiro_todos_os_produtos_na_tela_inicial() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
 }
