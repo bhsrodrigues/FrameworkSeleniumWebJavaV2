@@ -14,4 +14,23 @@ public class HomeAdoPetPage extends BasePage {
 		super();
 	}
 	
+	public void acessarSite() {
+		driver.navigate().to("https://adopet-frontend-cypress.vercel.app/");
+	}
+	
+	public String getUrlSite() {
+		return getURL();
+	}
+	
+	public void clicarLogin() {
+		clicar(linkFazerLogin);
+	}
+	
+	public void clicarFazerCadastro() {
+		clicar(linkFacaCadastro);
+	}
+	
+	public void clicarLogout() {
+		clicar(btnLogout);
+	}
 }

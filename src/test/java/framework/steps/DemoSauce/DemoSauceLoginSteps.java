@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import framework.constantes.SauceDemoConstants;
-import framework.flows.FlowsLoginSauceDemo;
+import framework.flows.saucedemo.FlowsLoginSauceDemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

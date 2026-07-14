@@ -3,8 +3,8 @@ package framework.steps.DemoSauce;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import framework.constantes.SauceDemoConstants;
-import framework.flows.FlowsCheckoutSauceDemo;
-import framework.flows.FlowsLoginSauceDemo;
+import framework.flows.saucedemo.FlowsCheckoutSauceDemo;
+import framework.flows.saucedemo.FlowsLoginSauceDemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

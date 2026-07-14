@@ -55,16 +55,26 @@ public class BasePage {
 		return esperarElementoVisivel(by) != null;
 	}
 	
+	protected BasePage limparCampo(By by) {
+		esperarElementoVisivel(by).clear();
+		return this;
+	}
+	
+	protected void limparCampo(WebElement elem) {
+		WebElement element = esperarElementoVisivel(elem);
+		element.clear();
+	}
+	
 	protected void digitar(By by, String text) {
 		WebElement element = esperarElementoVisivel(by);
 		
 		try {
 			element.click();
-			element.clear();
+			limparCampo(by);
 			element.sendKeys(text);
 		}catch(Exception ex) {
 			actions.click(element).build().perform();
-			element.clear();
+			limparCampo(by);
 			actions.sendKeys(element, text).build().perform();
 		}
 	}
@@ -75,11 +85,11 @@ public class BasePage {
 		
 		try {
 			element.click();
-			element.clear();
+			limparCampo(elem);
 			element.sendKeys(texto);
 		}catch(Exception ex) {
 			actions.click(element).build().perform();
-			element.clear();
+			limparCampo(elem);
 			actions.sendKeys(element, texto).build().perform();
 		}
 	}
@@ -105,6 +115,10 @@ public class BasePage {
 		}
 		
 		return tempList;
+	}
+	
+	protected String getURL() {
+		return driver.getCurrentUrl();
 	}
 	
 	

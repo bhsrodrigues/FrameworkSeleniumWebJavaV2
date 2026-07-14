@@ -2,8 +2,8 @@ package framework.steps.DemoSauce;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import framework.flows.FlowsFiltrosSauceDemo;
-import framework.flows.FlowsLoginSauceDemo;
+import framework.flows.saucedemo.FlowsFiltrosSauceDemo;
+import framework.flows.saucedemo.FlowsLoginSauceDemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

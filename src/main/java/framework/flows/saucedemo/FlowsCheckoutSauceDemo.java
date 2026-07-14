@@ -1,4 +1,4 @@
-package framework.flows;
+package framework.flows.saucedemo;
 
 import java.math.BigDecimal;
 

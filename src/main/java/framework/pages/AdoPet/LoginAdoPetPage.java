@@ -9,6 +9,7 @@ public class LoginAdoPetPage extends BasePage{
 	private By txtEmail = By.xpath("//*[@data-test='input-loginEmail']");
 	private By txtSenha = By.xpath("//*[@data-test='input-loginPassword']");
 	private By btnLogin = By.xpath("//*[@data-test='submit-button']");
+	private By mensagemErro = By.className("error");
 	
 	public LoginAdoPetPage(){
 		super();
@@ -23,5 +24,10 @@ public class LoginAdoPetPage extends BasePage{
 		digitar(txtSenha, senha);
 		clicarBotaoLogin();
 	}
+
+	public String mensagemErro() {
+		return esperarElementoVisivel(mensagemErro).getText();
+	}
+	
 	
 }
